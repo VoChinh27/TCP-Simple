@@ -1,0 +1,74 @@
+[
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "start_client",
+        "kind": 2,
+        "importPath": "DaLuong.Clientnn",
+        "description": "DaLuong.Clientnn",
+        "peekOfCode": "def start_client():\n    # Tạo socket\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Kết nối đến server\n    client_socket.connect(('localhost', 12345))\n    try:\n        while True:\n            # Gửi tin nhắn đến server\n            message = input(\"Nhập tin nhắn (hoặc 'exit' để thoát): \")\n            if message.lower() == 'exit':",
+        "detail": "DaLuong.Clientnn",
+        "documentation": {}
+    },
+    {
+        "label": "handle_client",
+        "kind": 2,
+        "importPath": "DaLuong.Servernn",
+        "description": "DaLuong.Servernn",
+        "peekOfCode": "def handle_client(client_socket, addr):\n    print(f\"Kết nối từ {addr}\")\n    with client_socket:\n        while True:\n            # Nhận dữ liệu từ client\n            message = client_socket.recv(1024).decode()\n            if not message:\n                break\n            print(f\"Nhận từ client {addr}: {message}\")\n            # Phản hồi lại client",
+        "detail": "DaLuong.Servernn",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 2,
+        "importPath": "DaLuong.Servernn",
+        "description": "DaLuong.Servernn",
+        "peekOfCode": "def start_server():\n    # Tạo socket\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Gán địa chỉ và cổng\n    server_socket.bind(('localhost', 12345))\n    # Lắng nghe kết nối\n    server_socket.listen(5)\n    print(\"Server đang lắng nghe...\")\n    try:\n        while True:",
+        "detail": "DaLuong.Servernn",
+        "documentation": {}
+    },
+    {
+        "label": "start_client",
+        "kind": 2,
+        "importPath": "DonLuong.Client11",
+        "description": "DonLuong.Client11",
+        "peekOfCode": "def start_client():\n    # Tạo socket\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Kết nối đến server\n    client_socket.connect(('localhost', 12345))\n    try:\n        while True:\n            # Gửi tin nhắn đến server\n            message = input(\"Nhập tin nhắn (hoặc 'exit' để thoát): \")\n            if message.lower() == 'exit':",
+        "detail": "DonLuong.Client11",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 2,
+        "importPath": "DonLuong.Server11",
+        "description": "DonLuong.Server11",
+        "peekOfCode": "def start_server():\n    # Tạo socket\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    # Gán địa chỉ và cổng\n    server_socket.bind(('localhost', 12345))\n    # Lắng nghe kết nối\n    server_socket.listen(1)\n    print(\"Server đang lắng nghe...\")\n    try:\n        while True:",
+        "detail": "DonLuong.Server11",
+        "documentation": {}
+    },
+    {
+        "label": "handle_client",
+        "kind": 2,
+        "importPath": "DonLuong.Server11",
+        "description": "DonLuong.Server11",
+        "peekOfCode": "def handle_client(client_socket):\n    with client_socket:\n        while True:\n            # Nhận dữ liệu từ client\n            message = client_socket.recv(1024).decode()\n            if not message:\n                break\n            print(f\"Nhận từ client: {message}\")\n            # Phản hồi lại client\n            response = f\"Server đã nhận: {message}\"",
+        "detail": "DonLuong.Server11",
+        "documentation": {}
+    }
+]
